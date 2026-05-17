@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Star, ChevronRight, Heart, Brain, Zap, Shield, Lock } from 'lucide-react';
+import { Star, ChevronRight, Heart, Brain, Zap, Shield, Lock, Sparkles } from 'lucide-react';
 
 /**
  * DESIGN PHILOSOPHY: Premium Luxury Christian Prosperity
  * - Copy agressiva cristã focada em prosperidade, saúde, sabedoria, auto controle
  * - Versículo: "Transformai-vos pela renovação da vossa mente." Romanos 12:2
+ * - Logo "CÓDIGO DE DEUS" no topo
  * - Ênfase em ÁUDIO PODEROSO que desbloqueia crenças limitantes
  * - Destaques em amarelo premium
  * - Cores de luxo e prosperidade (preto + amarelo)
@@ -134,6 +135,12 @@ export default function Home() {
         {/* Overlay Premium */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85 z-0" />
         
+        {/* Logo no Topo */}
+        <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-2">
+          <Sparkles className="w-6 h-6 md:w-7 md:h-7 text-yellow-400" />
+          <h1 className="text-xl md:text-2xl font-black text-yellow-400 tracking-wider">CÓDIGO DE DEUS</h1>
+        </div>
+
         {/* Content */}
         <div className="relative z-10 max-w-2xl mx-auto text-center space-y-4 md:space-y-6">
           {/* Versículo Bíblico */}
@@ -162,28 +169,6 @@ export default function Home() {
                 ))}
               </div>
               <span><span className="text-yellow-300 font-bold">2.847+</span> vidas transformadas</span>
-            </div>
-          </div>
-
-          {/* Promessas Agressivas - Bloco Profissional */}
-          <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-xl p-5 md:p-7 backdrop-blur-sm space-y-3 mt-4">
-            <div className="grid grid-cols-2 gap-3 md:gap-4">
-              <div className="flex items-center gap-2">
-                <Zap className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 flex-shrink-0" />
-                <span className="text-white font-bold text-sm md:text-base"><span className="text-yellow-300">Prosperidade</span> desbloqueada</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Heart className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 flex-shrink-0" />
-                <span className="text-white font-bold text-sm md:text-base"><span className="text-yellow-300">Saúde</span> restaurada</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Brain className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 flex-shrink-0" />
-                <span className="text-white font-bold text-sm md:text-base"><span className="text-yellow-300">Sabedoria</span> ativada</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 flex-shrink-0" />
-                <span className="text-white font-bold text-sm md:text-base"><span className="text-yellow-300">Auto Controle</span> total</span>
-              </div>
             </div>
           </div>
 
@@ -217,10 +202,10 @@ export default function Home() {
       </section>
 
       {/* ===== PROVA SOCIAL - DEPOIMENTOS ===== */}
-      <section className="py-12 md:py-16 px-4 bg-black relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-8 md:mb-12 space-y-2 md:space-y-3">
+          <div className="text-center mb-6 md:mb-10 space-y-2 md:space-y-3">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
               Quem Já
               <br />
@@ -272,17 +257,15 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
-            {/* Indicators - REMOVIDO */}
           </div>
         </div>
       </section>
 
       {/* ===== O QUE VOCÊ VAI RECEBER ===== */}
-      <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
         <div className="max-w-4xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-8 md:mb-12 space-y-3 md:space-y-4">
+          <div className="text-center mb-6 md:mb-10 space-y-3 md:space-y-4">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
               O Que Você vai
               <br />
@@ -330,9 +313,9 @@ export default function Home() {
       </section>
 
       {/* ===== POR QUE AGORA ===== */}
-      <section className="py-12 md:py-16 px-4 bg-black relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8 md:mb-12 space-y-2 md:space-y-3">
+          <div className="text-center mb-6 md:mb-10 space-y-2 md:space-y-3">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
               Por Que <span className="text-yellow-400">AGORA</span>?
             </h2>
@@ -374,7 +357,7 @@ export default function Home() {
       </section>
 
       {/* ===== URGÊNCIA & SCARCITY ===== */}
-      <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-yellow-400/10 relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-gradient-to-b from-black to-yellow-400/10 relative z-20">
         <div className="max-w-4xl mx-auto">
           <div className="p-6 md:p-8 rounded-2xl border-2 border-yellow-400 bg-yellow-400/10 backdrop-blur-sm text-center space-y-3 md:space-y-5">
             <h2 className="text-3xl md:text-5xl font-black">
@@ -404,9 +387,9 @@ export default function Home() {
       </section>
 
       {/* ===== FAQ RÁPIDO ===== */}
-      <section className="py-12 md:py-16 px-4 bg-black relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-black text-center mb-8 md:mb-12 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black text-center mb-6 md:mb-10 leading-tight">
             Dúvidas <span className="text-yellow-400">Frequentes</span>
           </h2>
 
@@ -439,7 +422,7 @@ export default function Home() {
       </section>
 
       {/* ===== CTA FINAL ===== */}
-      <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
         <div className="max-w-4xl mx-auto text-center space-y-5 md:space-y-6">
           <h2 className="text-4xl md:text-6xl font-black leading-tight">
             Sua Transformação
