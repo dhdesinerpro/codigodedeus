@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Star, ChevronRight, Zap, Lock, Volume2, Sparkles } from 'lucide-react';
+import { Star, ChevronRight, Zap, Heart, Brain, Shield } from 'lucide-react';
 
 /**
- * DESIGN PHILOSOPHY: Premium Dark Minimalist 2026
- * - Copy agressiva e persuasiva com urgência emocional
- * - Estrutura compacta com espaçamento estratégico (sem sobreposições)
- * - Tipografia moderna com destaques em amarelo
- * - Background premium moderno (não espiritual, mais tech-luxury)
- * - UX pensada em jornada de conversão
- * - Animações suaves e modernas
+ * DESIGN PHILOSOPHY: Premium Luxury Christian Prosperity
+ * - Copy agressiva cristã focada em prosperidade, saúde, sabedoria, auto controle
+ * - Título: "MUDE SUA VIDA EM 7 DIAS"
+ * - Ênfase em ÁUDIO PODEROSO que desbloqueia crenças limitantes
+ * - Muitos destaques em amarelo premium
+ * - Cores de luxo e prosperidade
+ * - Mobile Android first (botões grandes, espaçamento touch-friendly)
+ * - Rodapé fixo amarelo premium
+ * - Copy sempre agressiva e promessas fortes
  */
 
 interface Testimonial {
@@ -24,80 +26,79 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: 'Mariana Costa',
     profession: 'Empresária',
-    feedback: 'Minha mente destravou. Não é exagero. Terceiro dia e já sentia diferente.',
+    feedback: 'Prosperidade desbloqueada. Minha mente se abriu para oportunidades que não via antes. Milagre real.',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop'
   },
   {
     id: 2,
     name: 'Rafael Mendes',
     profession: 'Corretor',
-    feedback: 'Recuperei minha fé. Esse áudio mexeu profundamente comigo de forma real.',
+    feedback: 'Saúde mental restaurada. Ansiedade desapareceu. Recuperei minha fé e minha força. Transformação divina.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop'
   },
   {
     id: 3,
     name: 'Juliana Alves',
     profession: 'Psicóloga',
-    feedback: 'Paz mental + clareza emocional. Recomendo para todos os meus pacientes.',
+    feedback: 'Sabedoria ativada. Meus pacientes veem mudanças profundas. Isso é espiritual de verdade.',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop'
   },
   {
     id: 4,
     name: 'Eduardo Lima',
-    profession: 'Personal Trainer',
-    feedback: 'Comecei por curiosidade. Virou ritual diário. Não consigo viver sem.',
+    profession: 'Empresário',
+    feedback: 'Auto controle total. Vícios desapareceram. Meu negócio triplicou em 3 meses. Obra de Deus.',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop'
   },
   {
     id: 5,
     name: 'Camila Rocha',
-    profession: 'Designer',
-    feedback: 'Diferente de tudo. Profundo. Real. Isso é transformação de verdade.',
+    profession: 'Pastora',
+    feedback: 'Conexão espiritual profunda. Bloqueios inconscientes desapareceram. Sinto a presença de Deus.',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop'
   },
   {
     id: 6,
     name: 'Felipe Martins',
     profession: 'Empresário',
-    feedback: 'Foco, leveza, força espiritual. Meu desempenho aumentou 40%.',
+    feedback: 'Riqueza mental e material. Padrões limitantes foram quebrados. Minha vida é outra.',
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop'
   },
   {
     id: 7,
     name: 'Aline Ferreira',
-    profession: 'Estudante',
-    feedback: 'Minha mente desacelerou pela primeira vez em ANOS. Que alívio.',
+    profession: 'Missionária',
+    feedback: 'Consciência elevada. Sinto a presença do Espírito Santo. Meu chamado se ativou. Milagre.',
     image: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=150&h=150&fit=crop'
   }
 ];
 
 const features = [
   {
+    icon: Heart,
+    title: 'Saúde Restaurada',
+    description: 'Cura emocional, mental e espiritual. Seu corpo responde à frequência divina.'
+  },
+  {
+    icon: Brain,
+    title: 'Sabedoria Ativada',
+    description: 'Desbloqueie padrões inconscientes. Acesse a inteligência divina que já existe em você.'
+  },
+  {
     icon: Zap,
-    title: 'Frequências Ativadoras',
-    description: 'Som calibrado para despertar estados mentais elevados'
+    title: 'Prosperidade Desbloqueada',
+    description: 'Crenças limitantes desaparecem. Riqueza e abundância fluem naturalmente.'
   },
   {
-    icon: Lock,
-    title: 'Conhecimento Ancestral',
-    description: 'Ensinamentos de Jesus + ciência moderna em uma experiência'
-  },
-  {
-    icon: Volume2,
-    title: 'Ativação Profunda',
-    description: 'Impacto emocional imediato e duradouro'
-  },
-  {
-    icon: Sparkles,
-    title: 'Transformação Real',
-    description: 'Resultados mensuráveis em 7 dias de uso consistente'
+    icon: Shield,
+    title: 'Auto Controle Total',
+    description: 'Domine seus impulsos, emoções e desejos. Força espiritual inabalável.'
   }
 ];
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
-  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -113,16 +114,16 @@ export default function Home() {
   }, []);
 
   const handleCTA = () => {
-    const message = 'Quero desbloquear o Código de Deus agora!';
+    const message = 'Quero desbloquear o Código de Deus e MUDAR MINHA VIDA AGORA!';
     const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
   };
 
   return (
-    <div className="w-full bg-background text-foreground overflow-hidden">
+    <div className="w-full bg-black text-white overflow-hidden">
       {/* ===== HERO SECTION ===== */}
       <section 
-        className="relative min-h-screen flex flex-col justify-center items-center px-4 py-20"
+        className="relative min-h-screen flex flex-col justify-center items-center px-4 py-16 md:py-20"
         style={{
           backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663669712065/P5kJDka2K9cT2nfK2HzBWG/hero-bg-modern-9kA24rzc9LuRirLUbYrPbU.webp')`,
           backgroundSize: 'cover',
@@ -130,96 +131,101 @@ export default function Home() {
           backgroundAttachment: 'fixed',
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/80 z-0" />
+        {/* Overlay Premium */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85 z-0" />
         
         {/* Content */}
-        <div className="relative z-10 max-w-3xl mx-auto text-center space-y-8 animate-fadeInUp">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-primary/10 border border-gold-primary/30 text-gold-primary text-sm font-semibold">
+        <div className="relative z-10 max-w-2xl mx-auto text-center space-y-6 md:space-y-8">
+          {/* Badge Premium */}
+          <div className="inline-flex items-center gap-2 px-3 md:px-4 py-2 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs md:text-sm font-bold tracking-wider">
             <Zap className="w-4 h-4" />
-            TRANSFORMAÇÃO COMPROVADA EM 7 DIAS
+            ÁUDIO PODEROSO CRISTÃO
           </div>
 
-          {/* Título Principal */}
-          <h1 className="text-6xl md:text-7xl font-black leading-tight">
-            Desperte Seu Poder
+          {/* Título Principal - MUDE SUA VIDA EM 7 DIAS */}
+          <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
+            MUDE SUA VIDA
             <br />
-            <span className="text-gold-primary">Espiritual Real</span>
+            <span className="text-yellow-400">EM 7 DIAS</span>
           </h1>
 
-          {/* Subtítulo com Copy Agressiva */}
-          <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-light">
-            Enquanto você dorme, <span className="text-gold-primary font-semibold">seus concorrentes</span> já estão despertando. 
-            <br />
-            <span className="text-gold-primary font-semibold">Não fique para trás.</span>
+          {/* Subtítulo com Copy Agressiva Cristã */}
+          <p className="text-lg md:text-2xl text-white/90 leading-relaxed font-light">
+            <span className="text-yellow-300 font-bold">Áudio Poderoso</span> que ativa sua consciência, desbloqueia <span className="text-yellow-300 font-bold">crenças limitantes</span> e liberta você de <span className="text-yellow-300 font-bold">padrões inconscientes</span>.
           </p>
 
-          {/* Impacto */}
-          <div className="bg-gold-primary/5 border border-gold-primary/20 rounded-xl p-6 backdrop-blur-sm">
-            <p className="text-white/80 text-lg">
-              Áudio desenvolvido a partir de <span className="text-gold-primary font-semibold">ensinamentos ancestrais</span>, 
-              <span className="text-gold-primary font-semibold"> frequências científicas</span> e 
-              <span className="text-gold-primary font-semibold"> ativação mental</span> para transformar sua vida em dias, não meses.
+          {/* Promessas Agressivas */}
+          <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-xl p-5 md:p-7 backdrop-blur-sm space-y-3">
+            <p className="text-white font-bold text-base md:text-lg">
+              ✨ <span className="text-yellow-300">PROSPERIDADE</span> desbloqueada
+            </p>
+            <p className="text-white font-bold text-base md:text-lg">
+              ❤️ <span className="text-yellow-300">SAÚDE</span> restaurada
+            </p>
+            <p className="text-white font-bold text-base md:text-lg">
+              🧠 <span className="text-yellow-300">SABEDORIA</span> ativada
+            </p>
+            <p className="text-white font-bold text-base md:text-lg">
+              🛡️ <span className="text-yellow-300">AUTO CONTROLE</span> total
             </p>
           </div>
 
-          {/* CTA Principal */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          {/* CTA Principal - Texto Agressivo */}
+          <div className="flex flex-col gap-3 justify-center pt-2">
             <button
               onClick={handleCTA}
-              className="group px-8 py-4 bg-gold-primary text-black font-bold text-lg rounded-lg hover:bg-gold-dark transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-gold-primary/50 transform hover:scale-105"
+              className="group w-full px-6 md:px-8 py-4 md:py-5 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
             >
-              DESBLOQUEAR AGORA
+              DESBLOQUEAR MINHA TRANSFORMAÇÃO AGORA
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={handleCTA}
-              className="px-8 py-4 border-2 border-gold-primary text-gold-primary font-bold text-lg rounded-lg hover:bg-gold-primary/10 transition-all duration-300"
+              className="w-full px-6 md:px-8 py-4 border-2 border-yellow-400 text-yellow-300 font-bold text-base md:text-lg rounded-lg hover:bg-yellow-400/10 transition-all duration-300"
             >
               SABER MAIS
             </button>
           </div>
 
           {/* Social Proof Rápida */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4 text-sm text-white/70">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-col gap-4 pt-4 text-sm md:text-base">
+            <div className="flex items-center justify-center gap-3">
               <div className="flex -space-x-2">
                 {testimonials.slice(0, 3).map((t) => (
-                  <img key={t.id} src={t.image} alt={t.name} className="w-8 h-8 rounded-full border-2 border-gold-primary/50" />
+                  <img key={t.id} src={t.image} alt={t.name} className="w-8 h-8 rounded-full border-2 border-yellow-400/50" />
                 ))}
               </div>
-              <span><span className="text-gold-primary font-semibold">2.847+</span> pessoas transformadas</span>
+              <span><span className="text-yellow-300 font-bold">2.847+</span> vidas transformadas</span>
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center justify-center gap-2">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-gold-primary text-gold-primary" />
+                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
               ))}
-              <span><span className="text-gold-primary font-semibold">4.9/5</span> avaliações</span>
+              <span><span className="text-yellow-300 font-bold">4.9/5</span> avaliações verificadas</span>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-          <svg className="w-6 h-6 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+          <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
       </section>
 
       {/* ===== PROVA SOCIAL - DEPOIMENTOS ===== */}
-      <section className="py-20 px-4 bg-background relative z-20">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 md:py-20 px-4 bg-black relative z-20">
+        <div className="max-w-4xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-5xl md:text-6xl font-black">
-              Quem Já Transformou
+          <div className="text-center mb-12 md:mb-16 space-y-3 md:space-y-4">
+            <h2 className="text-4xl md:text-6xl font-black leading-tight">
+              Quem Já
               <br />
-              <span className="text-gold-primary">Sua Vida</span>
+              <span className="text-yellow-400">TRANSFORMOU SUA VIDA</span>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
-              Pessoas reais. Resultados reais. Transformação que você pode ver e sentir.
+            <p className="text-white/70 text-base md:text-lg">
+              Vidas reais. Milagres reais. Transformação que você pode sentir.
             </p>
           </div>
 
@@ -233,17 +239,17 @@ export default function Home() {
                 }}
               >
                 {testimonials.map((testimonial) => (
-                  <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                    <div className="bg-dark-card/60 border border-gold-primary/20 rounded-2xl p-8 md:p-12 backdrop-blur-sm hover:border-gold-primary/50 transition-all duration-300">
+                  <div key={testimonial.id} className="w-full flex-shrink-0 px-2 md:px-4">
+                    <div className="bg-gradient-to-br from-yellow-400/5 to-yellow-400/0 border border-yellow-400/25 rounded-2xl p-6 md:p-10 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300">
                       {/* Stars */}
-                      <div className="flex gap-1 mb-6">
+                      <div className="flex gap-1 mb-5 md:mb-6">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-gold-primary text-gold-primary" />
+                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
 
                       {/* Feedback */}
-                      <p className="text-white text-xl md:text-2xl font-light mb-8 leading-relaxed">
+                      <p className="text-white text-lg md:text-xl font-light mb-6 md:mb-8 leading-relaxed">
                         "{testimonial.feedback}"
                       </p>
 
@@ -252,11 +258,11 @@ export default function Home() {
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-14 h-14 rounded-full object-cover border-2 border-gold-primary"
+                          className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-yellow-400"
                         />
                         <div className="text-left">
-                          <h3 className="text-white font-bold text-lg">{testimonial.name}</h3>
-                          <p className="text-gold-primary text-sm">{testimonial.profession}</p>
+                          <h3 className="text-white font-bold text-base md:text-lg">{testimonial.name}</h3>
+                          <p className="text-yellow-300 text-sm">{testimonial.profession}</p>
                         </div>
                       </div>
                     </div>
@@ -266,14 +272,14 @@ export default function Home() {
             </div>
 
             {/* Indicators */}
-            <div className="flex justify-center gap-2 mt-8">
+            <div className="flex justify-center gap-2 mt-6 md:mt-8">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonialIndex(index)}
                   className={`transition-all duration-300 rounded-full ${
                     index === currentTestimonialIndex 
-                      ? 'bg-gold-primary w-8 h-2' 
+                      ? 'bg-yellow-400 w-8 h-2' 
                       : 'bg-white/20 w-2 h-2 hover:bg-white/40'
                   }`}
                 />
@@ -284,36 +290,36 @@ export default function Home() {
       </section>
 
       {/* ===== O QUE VOCÊ RECEBE ===== */}
-      <section className="py-20 px-4 bg-dark-card/30 relative z-20">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
+        <div className="max-w-4xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-5xl md:text-6xl font-black">
+          <div className="text-center mb-12 md:mb-16 space-y-3 md:space-y-4">
+            <h2 className="text-4xl md:text-6xl font-black leading-tight">
               O Que Você
               <br />
-              <span className="text-gold-primary">Realmente Recebe</span>
+              <span className="text-yellow-400">REALMENTE RECEBE</span>
             </h2>
-            <p className="text-white/70 text-lg">
-              Não é só um áudio. É uma experiência completa de transformação.
+            <p className="text-white/70 text-base md:text-lg">
+              Não é só um áudio. É <span className="text-yellow-300 font-bold">libertação espiritual</span> completa.
             </p>
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={index}
-                  className="p-8 rounded-2xl border border-gold-primary/20 bg-background/50 backdrop-blur-sm hover:border-gold-primary/50 hover:bg-dark-card/40 transition-all duration-300 group"
+                  className="p-5 md:p-7 rounded-2xl border border-yellow-400/25 bg-black/50 backdrop-blur-sm hover:border-yellow-400/50 hover:bg-yellow-400/5 transition-all duration-300 group"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gold-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-gold-primary/30 transition-colors">
-                      <Icon className="w-6 h-6 text-gold-primary" />
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-yellow-400/20 flex items-center justify-center flex-shrink-0 group-hover:bg-yellow-400/30 transition-colors">
+                      <Icon className="w-6 h-6 md:w-7 md:h-7 text-yellow-400" />
                     </div>
                     <div>
-                      <h3 className="text-white font-bold text-xl mb-2">{feature.title}</h3>
-                      <p className="text-white/70 leading-relaxed">{feature.description}</p>
+                      <h3 className="text-white font-bold text-base md:text-lg mb-1">{feature.title}</h3>
+                      <p className="text-white/70 text-sm md:text-base leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 </div>
@@ -324,43 +330,43 @@ export default function Home() {
       </section>
 
       {/* ===== POR QUE AGORA ===== */}
-      <section className="py-20 px-4 bg-background relative z-20">
+      <section className="py-16 md:py-20 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-5xl md:text-6xl font-black">
-              Por Que <span className="text-gold-primary">Agora</span>?
+          <div className="text-center mb-12 md:mb-16 space-y-3 md:space-y-4">
+            <h2 className="text-4xl md:text-6xl font-black leading-tight">
+              Por Que <span className="text-yellow-400">AGORA</span>?
             </h2>
-            <p className="text-white/70 text-lg">
-              Não é coincidência que você está aqui. É chamado.
+            <p className="text-white/70 text-base md:text-lg">
+              Deus está chamando você. Não ignore este sinal.
             </p>
           </div>
 
           {/* Reasons */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-5">
             {[
               {
-                title: 'Seu Tempo Está Acabando',
-                desc: 'Cada dia que passa sem despertar é um dia perdido. Seus concorrentes não estão dormindo.'
+                title: 'Seu Tempo É Limitado',
+                desc: 'Cada dia sem despertar é um dia perdido. Seus bloqueios inconscientes estão te roubando prosperidade, saúde e paz.'
               },
               {
-                title: 'Conhecimento Raro & Exclusivo',
-                desc: 'Poucas pessoas têm acesso a isso. Você está entre os escolhidos. Não desperdice.'
+                title: 'Conhecimento Raro & Divino',
+                desc: 'Poucas pessoas têm acesso a isso. Você foi escolhido. Não desperdice este chamado.'
               },
               {
                 title: 'Garantia de Transformação',
-                desc: 'Se não sentir mudança em 7 dias, devolvemos 100% do seu dinheiro. Zero risco.'
+                desc: 'Se não sentir mudança em 7 dias, devolvemos 100% do seu dinheiro. Zero risco. Você só ganha.'
               },
               {
-                title: 'Comunidade Poderosa',
-                desc: 'Junte-se a 2.847+ pessoas que já despertaram. Você não está sozinho nessa jornada.'
+                title: 'Comunidade Cristã Poderosa',
+                desc: 'Junte-se a 2.847+ pessoas que já despertaram. Você não está sozinho nessa jornada espiritual.'
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-6 rounded-xl border border-gold-primary/20 bg-dark-card/40 hover:border-gold-primary/50 transition-all duration-300">
-                <h3 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
-                  <span className="text-gold-primary font-black">{idx + 1}.</span>
+              <div key={idx} className="p-4 md:p-6 rounded-xl border border-yellow-400/25 bg-yellow-400/5 hover:border-yellow-400/50 transition-all duration-300">
+                <h3 className="text-white font-bold text-base md:text-lg mb-2 flex items-center gap-2">
+                  <span className="text-yellow-400 font-black text-lg md:text-xl">{idx + 1}.</span>
                   {item.title}
                 </h3>
-                <p className="text-white/70">{item.desc}</p>
+                <p className="text-white/70 text-sm md:text-base">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -368,22 +374,25 @@ export default function Home() {
       </section>
 
       {/* ===== URGÊNCIA & SCARCITY ===== */}
-      <section className="py-20 px-4 bg-gradient-to-b from-dark-card/30 to-background relative z-20">
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black to-yellow-400/10 relative z-20">
         <div className="max-w-4xl mx-auto">
-          <div className="p-12 rounded-2xl border-2 border-gold-primary bg-gold-primary/5 backdrop-blur-sm text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-black">
-              <span className="text-gold-primary">⚠️ OFERTA LIMITADA</span>
+          <div className="p-6 md:p-10 rounded-2xl border-2 border-yellow-400 bg-yellow-400/10 backdrop-blur-sm text-center space-y-4 md:space-y-6">
+            <h2 className="text-3xl md:text-5xl font-black">
+              <span className="text-yellow-300">⚠️ OFERTA LIMITADA</span>
             </h2>
-            <p className="text-2xl text-white font-bold">
-              Apenas <span className="text-gold-primary animate-pulse">47 acessos</span> restantes por R$ 27
+            <p className="text-2xl md:text-3xl text-white font-bold">
+              Apenas <span className="text-yellow-300 animate-pulse font-black">47 ACESSOS</span> restantes
             </p>
-            <p className="text-white/80 text-lg">
-              Depois disso, o preço sobe para <span className="text-gold-primary font-bold line-through">R$ 97</span>
+            <p className="text-white/80 text-base md:text-lg font-semibold">
+              Por apenas <span className="text-yellow-300 font-black text-xl md:text-2xl">R$ 27</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+            <p className="text-white/70 text-sm md:text-base">
+              Depois disso, o preço sobe para <span className="text-yellow-300 font-bold line-through">R$ 97</span>
+            </p>
+            <div className="flex flex-col gap-3 justify-center pt-4">
               <button
                 onClick={handleCTA}
-                className="group px-8 py-4 bg-gold-primary text-black font-black text-lg rounded-lg hover:bg-gold-dark transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-gold-primary/50 transform hover:scale-105"
+                className="group w-full px-6 md:px-8 py-4 md:py-5 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
               >
                 GARANTIR MEU ACESSO AGORA
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -394,34 +403,34 @@ export default function Home() {
       </section>
 
       {/* ===== FAQ RÁPIDO ===== */}
-      <section className="py-20 px-4 bg-background relative z-20">
+      <section className="py-16 md:py-20 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black text-center mb-16">
-            Dúvidas <span className="text-gold-primary">Frequentes</span>
+          <h2 className="text-4xl md:text-6xl font-black text-center mb-12 md:mb-16 leading-tight">
+            Dúvidas <span className="text-yellow-400">Frequentes</span>
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {[
               {
                 q: 'Quanto tempo leva para sentir os resultados?',
-                a: 'A maioria relata mudanças no 3º dia. Alguns no 1º dia. Garantia de 7 dias ou seu dinheiro de volta.'
+                a: 'A maioria relata transformações no 3º dia. Alguns no 1º dia. Garantia de 7 dias ou seu dinheiro de volta.'
               },
               {
                 q: 'Funciona para qualquer pessoa?',
-                a: 'Sim. Independente de idade, experiência ou crença. É ciência + espiritualidade.'
+                a: 'Sim. Independente de idade, fé ou experiência. É ciência + espiritualidade + poder divino.'
               },
               {
                 q: 'Posso usar em qualquer dispositivo?',
-                a: 'Sim. Celular, tablet, computador. Acesso vitalício. Baixe e ouça offline.'
+                a: 'Sim. Celular, tablet, computador. Acesso vitalício. Baixe e ouça offline quantas vezes quiser.'
               },
               {
                 q: 'E se não gostar?',
-                a: '7 dias de garantia incondicional. Se não sentir transformação, devolvemos tudo.'
+                a: '7 dias de garantia incondicional. Se não sentir transformação, devolvemos tudo sem perguntas.'
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-6 rounded-xl border border-gold-primary/20 bg-dark-card/40 hover:border-gold-primary/50 transition-all duration-300">
-                <h3 className="text-white font-bold text-lg mb-2">{item.q}</h3>
-                <p className="text-white/70">{item.a}</p>
+              <div key={idx} className="p-4 md:p-6 rounded-xl border border-yellow-400/25 bg-yellow-400/5 hover:border-yellow-400/50 transition-all duration-300">
+                <h3 className="text-white font-bold text-base md:text-lg mb-2">{item.q}</h3>
+                <p className="text-white/70 text-sm md:text-base">{item.a}</p>
               </div>
             ))}
           </div>
@@ -429,51 +438,51 @@ export default function Home() {
       </section>
 
       {/* ===== CTA FINAL ===== */}
-      <section className="py-20 px-4 bg-dark-card/50 relative z-20">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-5xl md:text-6xl font-black">
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
+        <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+          <h2 className="text-4xl md:text-6xl font-black leading-tight">
             Sua Transformação
             <br />
-            <span className="text-gold-primary">Começa Agora</span>
+            <span className="text-yellow-400">COMEÇA AGORA</span>
           </h2>
 
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Não é promessa vazia. É experiência real. Não é teoria. É prática. Não é esperança. É resultado.
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+            Não é promessa vazia. É <span className="text-yellow-300 font-bold">milagre real</span>. Não é teoria. É <span className="text-yellow-300 font-bold">prática comprovada</span>. Não é esperança. É <span className="text-yellow-300 font-bold">resultado garantido</span>.
           </p>
 
           <button
             onClick={handleCTA}
-            className="group px-10 py-5 bg-gold-primary text-black font-black text-xl rounded-lg hover:bg-gold-dark transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-gold-primary/50 transform hover:scale-105 mx-auto"
+            className="group w-full md:w-auto px-8 md:px-10 py-5 md:py-6 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
           >
             DESBLOQUEAR AGORA POR R$ 27
-            <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
 
-          <p className="text-white/60 text-sm">
-            ✓ Acesso vitalício • ✓ Sem contrato • ✓ Suporte 24/7 • ✓ Garantia 7 dias
+          <p className="text-white/60 text-xs md:text-sm">
+            ✓ Acesso vitalício • ✓ Sem contrato • ✓ Suporte 24/7 • ✓ Garantia 7 dias • ✓ Dinheiro de volta
           </p>
         </div>
       </section>
 
-      {/* ===== RODAPÉ FIXO ===== */}
-      <div className="fixed bottom-0 left-0 right-0 bg-dark-card/95 backdrop-blur-md border-t border-gold-primary/20 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4 flex-wrap">
-          <div className="flex items-center gap-3">
+      {/* ===== RODAPÉ FIXO AMARELO PREMIUM ===== */}
+      <div className="fixed bottom-0 left-0 right-0 bg-yellow-400 text-black z-50 shadow-2xl">
+        <div className="max-w-6xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-2 md:gap-3">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-gold-primary text-gold-primary" />
+                <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-black text-black" />
               ))}
             </div>
-            <span className="text-gold-primary font-bold text-sm">4.9/5 (2.847 reviews)</span>
+            <span className="font-black text-xs md:text-sm">4.9/5 (2.847 reviews)</span>
           </div>
 
-          <div className="text-white font-bold text-lg">
-            R$ <span className="text-gold-primary text-2xl">27</span>
+          <div className="text-black font-black text-base md:text-lg">
+            R$ <span className="text-2xl md:text-3xl">27</span>
           </div>
 
           <button
             onClick={handleCTA}
-            className="px-6 py-2 bg-gold-primary text-black font-bold rounded-lg hover:bg-gold-dark transition-all duration-300 whitespace-nowrap text-sm md:text-base"
+            className="px-5 md:px-7 py-2 md:py-3 bg-black text-yellow-400 font-black rounded-lg hover:bg-black/80 transition-all duration-300 whitespace-nowrap text-xs md:text-sm active:scale-95"
           >
             DESBLOQUEAR AGORA
           </button>
@@ -481,7 +490,7 @@ export default function Home() {
       </div>
 
       {/* Espaço para rodapé fixo */}
-      <div className="h-20" />
+      <div className="h-16 md:h-20" />
     </div>
   );
 }

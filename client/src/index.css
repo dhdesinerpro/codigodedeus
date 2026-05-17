@@ -43,49 +43,48 @@
 }
 
 :root {
-  /* Premium Dark Spiritual Palette */
-  --gold-primary: #d4af37;
-  --gold-dark: #b8960f;
-  --dark-bg: #0a0a0a;
-  --dark-card: #1a1f3a;
-  --dark-accent: #2a3f5f;
-  --blue-spiritual: #1a2f5a;
+  /* Premium Luxury Christian Prosperity Palette */
+  --gold-primary: #FFD700;
+  --gold-dark: #FFC700;
+  --dark-bg: #000000;
+  --dark-card: #0a0a0a;
+  --dark-accent: #1a1a1a;
   --white-primary: #ffffff;
   --white-secondary: #f5f5f5;
   
-  --primary: #d4af37;
-  --primary-foreground: #0a0a0a;
-  --sidebar-primary: #d4af37;
-  --sidebar-primary-foreground: #0a0a0a;
-  --chart-1: #d4af37;
-  --chart-2: #1a2f5a;
-  --chart-3: #2a3f5f;
-  --chart-4: #1a1f3a;
-  --chart-5: #0a0a0a;
+  --primary: #FFD700;
+  --primary-foreground: #000000;
+  --sidebar-primary: #FFD700;
+  --sidebar-primary-foreground: #000000;
+  --chart-1: #FFD700;
+  --chart-2: #FFC700;
+  --chart-3: #FFB700;
+  --chart-4: #FFA700;
+  --chart-5: #FF9700;
   --radius: 0.75rem;
-  --background: #0a0a0a;
-  --foreground: #f5f5f5;
-  --card: #1a1f3a;
-  --card-foreground: #f5f5f5;
-  --popover: #1a1f3a;
-  --popover-foreground: #f5f5f5;
-  --secondary: #2a3f5f;
-  --secondary-foreground: #f5f5f5;
-  --muted: #2a3f5f;
-  --muted-foreground: #b0b0b0;
-  --accent: #d4af37;
-  --accent-foreground: #0a0a0a;
-  --destructive: #ff4444;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #FFD700;
+  --muted: #2a2a2a;
+  --muted-foreground: #FFD700;
+  --accent: #FFD700;
+  --accent-foreground: #000000;
+  --destructive: #FF4444;
   --destructive-foreground: #ffffff;
-  --border: rgba(212, 175, 55, 0.1);
-  --input: rgba(212, 175, 55, 0.05);
-  --ring: #d4af37;
-  --sidebar: #1a1f3a;
-  --sidebar-foreground: #f5f5f5;
-  --sidebar-accent: #d4af37;
-  --sidebar-accent-foreground: #0a0a0a;
-  --sidebar-border: rgba(212, 175, 55, 0.1);
-  --sidebar-ring: #d4af37;
+  --border: rgba(255, 215, 0, 0.15);
+  --input: rgba(255, 215, 0, 0.08);
+  --ring: #FFD700;
+  --sidebar: #000000;
+  --sidebar-foreground: #ffffff;
+  --sidebar-accent: #FFD700;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: rgba(255, 215, 0, 0.15);
+  --sidebar-ring: #FFD700;
 }
 
 .dark {
@@ -103,32 +102,8 @@
   
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1f3a 50%, #0a0a0a 100%);
-    background-attachment: fixed;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  
-  .display-xl {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-  }
-  
-  .display-lg {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-  }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -140,67 +115,14 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes glow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.1);
-    }
-    50% {
-      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.2);
-    }
-  }
-  
-  @keyframes slideInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -211,59 +133,262 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
 }
 
-  /* Premium Button Styles */
-  .btn-primary {
-    @apply px-8 py-4 bg-accent text-accent-foreground font-semibold rounded-lg transition-all duration-300 ease-out;
-    animation: fadeInUp 0.8s ease-out;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  .btn-primary:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .btn-primary:active {
-    transform: scale(0.98);
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
   }
-  
-  /* Section Styles */
-  /* Improved Section Spacing */
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* ===== BUTTON STYLES ===== */
+button {
+  @apply transition-all duration-300;
+}
+
+button:active {
+  @apply transform scale-95;
+}
+
+/* ===== SECTION SPACING ===== */
+section {
+  position: relative;
+  z-index: 10;
+}
+
+section + section {
+  margin-top: 0;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1 {
+  @apply font-black tracking-tight;
+}
+
+h2 {
+  @apply font-black tracking-tight;
+}
+
+h3 {
+  @apply font-bold;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-yellow-300 {
+  color: #FFD700;
+}
+
+.text-yellow-400 {
+  color: #FFD700;
+}
+
+.bg-yellow-400 {
+  background-color: #FFD700;
+}
+
+.bg-yellow-400\/5 {
+  background-color: rgba(255, 215, 0, 0.05);
+}
+
+.bg-yellow-400\/10 {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.border-yellow-400 {
+  border-color: #FFD700;
+}
+
+.border-yellow-400\/25 {
+  border-color: rgba(255, 215, 0, 0.25);
+}
+
+.border-yellow-400\/30 {
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+.border-yellow-400\/40 {
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+.border-yellow-400\/50 {
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.hover\:border-yellow-400\/50:hover {
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.hover\:bg-yellow-400\/10:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.hover\:bg-yellow-500:hover {
+  background-color: #FFC700;
+}
+
+.hover\:bg-yellow-400\/5:hover {
+  background-color: rgba(255, 215, 0, 0.05);
+}
+
+.hover\:shadow-yellow-400\/50:hover {
+  box-shadow: 0 20px 25px -5px rgba(255, 215, 0, 0.5);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.fill-yellow-400 {
+  fill: #FFD700;
+}
+
+.group-hover\:bg-yellow-400\/30:hover {
+  background-color: rgba(255, 215, 0, 0.3);
+}
+
+.group-hover\:translate-x-1:hover {
+  transform: translateX(0.25rem);
+}
+
+.active\:scale-95:active {
+  transform: scale(0.95);
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 640px) {
+  button {
+    @apply py-3 text-base;
+    min-height: 44px;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  p {
+    @apply text-sm;
+  }
+}
+
+/* ===== RESPONSIVE SPACING ===== */
+@media (min-width: 768px) {
   section {
-    position: relative;
-    z-index: 10;
+    @apply py-20;
   }
-  
-  section + section {
-    margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  section {
+    @apply py-16;
   }
-  
-  /* Testimonial Cards */
-  .testimonial-card {
-    @apply p-6 rounded-xl backdrop-blur-md border border-accent/20 bg-card/40 transition-all duration-300;
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .testimonial-card:hover {
-    @apply border-accent/50 bg-card/60;
-    transform: translateY(-4px);
-  }
-  
-  /* Glow Effect */
-  .glow-effect {
-    animation: glow 3s ease-in-out infinite;
-  }
+}
