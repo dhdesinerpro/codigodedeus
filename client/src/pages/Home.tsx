@@ -23,15 +23,15 @@ interface Testimonial {
 }
 
 const verses = [
-  '"Conforme a vossa fé, vos seja feito." — JESUS CRISTO',
-  '"Tudo é possível ao que crê." — JESUS CRISTO',
-  '"A tua fé te curou." — JESUS CRISTO',
-  '"O Reino de Deus está dentro de vós." — JESUS CRISTO',
-  '"Tudo quanto em oração pedirdes, crede que recebestes." — JESUS CRISTO',
-  '"Se tiverdes fé e não duvidardes..." — JESUS CRISTO',
-  '"Não temas; crê somente." — JESUS CRISTO',
-  '"Se creres, verás a glória de Deus." — JESUS CRISTO',
-  '"Quem crê em mim fará também as obras que eu faço." — JESUS CRISTO',
+  '"Conforme a vossa fé, vos seja feito." — Jesus Cristo',
+  '"Tudo é possível ao que crê." — Jesus Cristo',
+  '"A tua fé te curou." — Jesus Cristo',
+  '"O Reino de Deus está dentro de vós." — Jesus Cristo',
+  '"Tudo quanto em oração pedirdes, crede que recebestes." — Jesus Cristo',
+  '"Se tiverdes fé e não duvidardes..." — Jesus Cristo',
+  '"Não temas; crê somente." — Jesus Cristo',
+  '"Se creres, verás a glória de Deus." — Jesus Cristo',
+  '"Quem crê em mim fará também as obras que eu faço." — Jesus Cristo',
   '"Transformai-vos pela renovação da vossa mente." — ROMANOS 12:2'
 ];
 
