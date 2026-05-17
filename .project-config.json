@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663669712065/P5kJDka2K9cT2nfK2HzBWG",
+    "access_key_id": "ASIAZV3A2ECZOQNO3JD3",
+    "secret_access_key": "IYvBkch8D1OprS33tCCuGD0KNwksQZ/3vWqamK9n",
+    "session_token": "IQoJb3JpZ2luX2VjEOT//////////wEaCXVzLWVhc3QtMSJIMEYCIQDuNcIXJVoWI4QZQz8CgPBqrXCGGzQOzeDz8s/GSHjyLgIhAIOJNyBeiCsz6D2S+hz29GTWdlnBabfbcLdpgbSUHE+UKv8DCKz//////////wEQBBoMNjY1Mzg2MDk4ODY2Igx7oX4W8ou1I2odysoq0wPIXLbHEt73tY0X2r9QSo0lhe/cOnd8b6M7n0ZVK03mZrNYAvqlYuKAZKLbXEfY+Ki2QDv7mbBKknFPOgS3JZUPbHnVlv8UKiZwfcYbBI5uApuhNYuN5SIhdHcguJWL1QVfqvUHHyeGxaRrv1abBiwd3j4CMz1Bb9NM7uLbpeyuNKIAsqnbPmDg0jJWmHzvUyjQFFpzgBDyiEzwbC6XIvCjL+j6zTEuGOvSfrK388P8f9dr7c6aN9dpoOwqdJV4ArAezZZ3kJL2GRgI1xYmHfdCyF9F7IKCZpGicdStz9Hv7UULYe2nHv8WEMqeH1nYSECouKDYHwQ1HcKSXk4b/WVWU5esUV72pZcfVcDFVJiUSxfQM14/LJqq0VGzZh6ttGg6FtZxgH/m1xr/TowlHtmc3p3mGLXotEA4ZcLkhAd7kZGJPQFTvLnZTAob85o+7WOXzDgT2WcW0nYZ0F1mmWwCC0Y7tOtH1YDLVdzaomum3+omTIBvNSz5fIozfbKC+UJNlqJL58580HA6Foyb3tfc6B0Qgw4orRfWKMF0LHS4YKKNOEsQ9s2Dhgn63NmjpJ8zI5Zdo8W+7ovOQCufYK/FUiLSCHbJsYnFxzS0aSagRg0KgjCEqajQBjqcAYmWSyo+8vnyeZntNUIEXsjHwNgMIDlkPQV7wL28aeHr5MuNwV+UTkExe+LWQkhFGP4+y1BpsVz8fTYowovlQMyoPoW88EFjnbBo7EjQcy5obdMmxWUMT33IqzPzHky4fojsj/7kXlQQ6N9kqHPXMZze4bgR09o9voBKhOJCKTs/SRN5yPxrw1UUzvcTQpnaFZ/ghuFcFVMHPyj9hQ==",
+    "expiration": "2026-05-18T07:18:28.000Z"
+  },
+  "name": "codigo-deus-landing",
+  "path": "/home/ubuntu/codigo-deus-landing",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "JqoWHGz7bCMvw8oCemNNPn",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "KHPzctRPK7WkGSaNxa5byU",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "doug007 oliveira",
+    "OWNER_OPEN_ID": "f3MFCfebUKzEWjiKa3pJPU",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "7bec8dcf-9b66-4774-acaa-4c3102be33c3",
+    "VITE_APP_ID": "P5kJDka2K9cT2nfK2HzBWG",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "Código de Deus - Landing Page Premium",
+    "VITE_FRONTEND_FORGE_API_KEY": "Fhapedv5xbJTZpRWYL89cB",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
