@@ -242,32 +242,14 @@
   }
   
   /* Section Styles */
-  .section-hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  /* Improved Section Spacing */
+  section {
     position: relative;
-    overflow: hidden;
+    z-index: 10;
   }
   
-  .section-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.6);
-    z-index: 0;
-  }
-  
-  .section-hero > * {
-    position: relative;
-    z-index: 1;
+  section + section {
+    margin-top: 0;
   }
   
   /* Testimonial Cards */
