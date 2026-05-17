@@ -22,6 +22,19 @@ interface Testimonial {
   image: string;
 }
 
+const verses = [
+  '"Conforme a vossa fé, vos seja feito." — JESUS CRISTO',
+  '"Tudo é possível ao que crê." — JESUS CRISTO',
+  '"A tua fé te curou." — JESUS CRISTO',
+  '"O Reino de Deus está dentro de vós." — JESUS CRISTO',
+  '"Tudo quanto em oração pedirdes, crede que recebestes." — JESUS CRISTO',
+  '"Se tiverdes fé e não duvidardes..." — JESUS CRISTO',
+  '"Não temas; crê somente." — JESUS CRISTO',
+  '"Se creres, verás a glória de Deus." — JESUS CRISTO',
+  '"Quem crê em mim fará também as obras que eu faço." — JESUS CRISTO',
+  '"Transformai-vos pela renovação da vossa mente." — ROMANOS 12:2'
+];
+
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -100,6 +113,7 @@ const features = [
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const [currentVerseIndex, setCurrentVerseIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -111,6 +125,13 @@ export default function Home() {
     const interval = setInterval(() => {
       setCurrentTestimonialIndex((prev) => (prev + 1) % testimonials.length);
     }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVerseIndex((prev) => (prev + 1) % verses.length);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -135,17 +156,29 @@ export default function Home() {
         {/* Overlay Premium */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85 z-0" />
         
-        {/* Logo no Topo */}
-        <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-2">
-          <Sparkles className="w-6 h-6 md:w-7 md:h-7 text-yellow-400" />
-          <h1 className="text-xl md:text-2xl font-black text-yellow-400 tracking-wider">CÓDIGO DE DEUS</h1>
-        </div>
+
 
         {/* Content */}
         <div className="relative z-10 max-w-2xl mx-auto text-center space-y-4 md:space-y-6">
-          {/* Versículo Bíblico */}
-          <div className="inline-flex items-center justify-center px-3 md:px-4 py-2 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs md:text-sm font-bold tracking-wider max-w-lg mx-auto">
-            "Transformai-vos pela renovação da vossa mente." Romanos 12:2
+          {/* Versículo Bíblico - Carrossel */}
+          <div className="inline-flex items-center justify-center px-3 md:px-4 py-2 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs md:text-sm font-bold tracking-wider max-w-2xl mx-auto min-h-[2.5rem] md:min-h-[3rem] overflow-hidden">
+            <div 
+              className="transition-all duration-500 ease-in-out"
+              style={{
+                opacity: 1,
+                animation: `fadeInOut 3s ease-in-out infinite`
+              }}
+            >
+              {verses[currentVerseIndex]}
+            </div>
+            <style>{`
+              @keyframes fadeInOut {
+                0% { opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { opacity: 0; }
+              }
+            `}</style>
           </div>
 
           {/* Título Principal - MUDE SUA VIDA EM 7 DIAS */}
