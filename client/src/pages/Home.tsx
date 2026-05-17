@@ -145,7 +145,7 @@ export default function Home() {
     <div className="w-full bg-black text-white overflow-hidden">
       {/* ===== HERO SECTION ===== */}
       <section 
-        className="relative min-h-screen flex flex-col justify-center items-center px-4 py-2 md:py-4"
+        className="relative min-h-screen flex flex-col justify-center items-center px-4 py-8 md:py-12"
         style={{
           backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663669712065/P5kJDka2K9cT2nfK2HzBWG/hero-bg-modern-9kA24rzc9LuRirLUbYrPbU.webp')`,
           backgroundSize: 'cover',
@@ -159,7 +159,7 @@ export default function Home() {
 
 
         {/* Content */}
-        <div className="relative z-10 max-w-2xl mx-auto text-center space-y-2 md:space-y-3">
+        <div className="relative z-10 max-w-2xl mx-auto text-center space-y-4 md:space-y-6">
           {/* Versículo Bíblico - Carrossel */}
           <div className="inline-flex items-center justify-center px-3 md:px-4 py-2 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs md:text-sm font-bold tracking-wider max-w-2xl mx-auto min-h-[2.5rem] md:min-h-[3rem] overflow-hidden">
             <div 
@@ -194,7 +194,7 @@ export default function Home() {
           </p>
 
           {/* Social Proof Rápida - Vidas Transformadas */}
-          <div className="flex flex-col gap-2 items-center pt-0">
+          <div className="flex flex-col gap-3 items-center pt-2">
             <div className="flex items-center justify-center gap-3">
               <div className="flex -space-x-2">
                 {testimonials.slice(0, 3).map((t) => (
@@ -206,7 +206,7 @@ export default function Home() {
           </div>
 
           {/* CTA Principal - Texto Centralizado */}
-          <div className="flex flex-col gap-2 justify-center pt-0">
+          <div className="flex flex-col gap-3 justify-center pt-2">
             <button
               onClick={handleCTA}
               className="group w-full px-6 md:px-8 py-4 md:py-5 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
@@ -235,10 +235,10 @@ export default function Home() {
       </section>
 
       {/* ===== PROVA SOCIAL - DEPOIMENTOS ===== */}
-      <section className="py-4 md:py-6 px-4 bg-black relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-3 md:mb-4 space-y-1 md:space-y-2">
+          <div className="text-center mb-6 md:mb-10 space-y-2 md:space-y-3">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
               Quem Já
               <br />
@@ -295,10 +295,10 @@ export default function Home() {
       </section>
 
       {/* ===== O QUE VOCÊ VAI RECEBER ===== */}
-      <section className="py-4 md:py-6 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
         <div className="max-w-4xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-3 md:mb-4 space-y-2 md:space-y-2">
+          <div className="text-center mb-6 md:mb-10 space-y-3 md:space-y-4">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
               O Que Você vai
               <br />
@@ -321,7 +321,7 @@ export default function Home() {
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -346,9 +346,9 @@ export default function Home() {
       </section>
 
       {/* ===== POR QUE AGORA ===== */}
-      <section className="py-4 md:py-6 px-4 bg-black relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-3 md:mb-4 space-y-1 md:space-y-2">
+          <div className="text-center mb-6 md:mb-10 space-y-2 md:space-y-3">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
               Por Que <span className="text-yellow-400">AGORA</span>?
             </h2>
@@ -358,7 +358,7 @@ export default function Home() {
           </div>
 
           {/* Reasons */}
-          <div className="space-y-2 md:space-y-3">
+          <div className="space-y-3 md:space-y-4">
             {[
               {
                 title: 'Seu Tempo É Limitado',
@@ -390,9 +390,9 @@ export default function Home() {
       </section>
 
       {/* ===== URGÊNCIA & SCARCITY ===== */}
-      <section className="py-4 md:py-6 px-4 bg-gradient-to-b from-black to-yellow-400/10 relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-gradient-to-b from-black to-yellow-400/10 relative z-20">
         <div className="max-w-4xl mx-auto">
-          <div className="p-4 md:p-6 rounded-2xl border-2 border-yellow-400 bg-yellow-400/10 backdrop-blur-sm text-center space-y-2 md:space-y-3">
+          <div className="p-6 md:p-8 rounded-2xl border-2 border-yellow-400 bg-yellow-400/10 backdrop-blur-sm text-center space-y-3 md:space-y-5">
             <h2 className="text-3xl md:text-5xl font-black">
               <span className="text-yellow-300">⚠️ OFERTA LIMITADA</span>
             </h2>
@@ -405,10 +405,10 @@ export default function Home() {
             <p className="text-white/70 text-sm md:text-base">
               Depois disso, o preço sobe para <span className="text-yellow-300 font-bold line-through">R$ 97</span>
             </p>
-            <div className="flex flex-col gap-2 justify-center pt-0">
+            <div className="flex flex-col gap-3 justify-center pt-2">
               <button
                 onClick={handleCTA}
-                className="group w-full md:w-auto px-8 md:px-10 py-5 md:py-6 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
+                className="group w-full px-6 md:px-8 py-4 md:py-5 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
               >
                 <Lock className="w-5 h-5" />
                 GARANTIR MEU ACESSO AGORA
@@ -420,13 +420,13 @@ export default function Home() {
       </section>
 
       {/* ===== FAQ RÁPIDO ===== */}
-      <section className="py-4 md:py-6 px-4 bg-black relative z-20">
+      <section className="py-8 md:py-12 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-black text-center mb-3 md:mb-5 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black text-center mb-6 md:mb-10 leading-tight">
             Dúvidas <span className="text-yellow-400">Frequentes</span>
           </h2>
 
-          <div className="space-y-2 md:space-y-3">
+          <div className="space-y-3 md:space-y-4">
             {[
               {
                 q: 'Quanto tempo leva para sentir os resultados?',
@@ -455,8 +455,8 @@ export default function Home() {
       </section>
 
       {/* ===== CTA FINAL ===== */}
-      <section className="py-4 md:py-6 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
-        <div className="max-w-4xl mx-auto text-center space-y-3 md:space-y-4">
+      <section className="py-8 md:py-12 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
+        <div className="max-w-4xl mx-auto text-center space-y-5 md:space-y-6">
           <h2 className="text-4xl md:text-6xl font-black leading-tight">
             Sua Transformação
             <br />
