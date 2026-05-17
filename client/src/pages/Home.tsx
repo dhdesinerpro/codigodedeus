@@ -131,7 +131,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentVerseIndex((prev) => (prev + 1) % verses.length);
-    }, 3000);
+    }, 7000);
     return () => clearInterval(interval);
   }, []);
 
@@ -161,12 +161,14 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-2xl mx-auto text-center space-y-4 md:space-y-6">
           {/* Versículo Bíblico - Carrossel */}
-          <div className="inline-flex items-center justify-center px-3 md:px-4 py-2 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs md:text-sm font-bold tracking-wider max-w-2xl mx-auto min-h-[2.5rem] md:min-h-[3rem] overflow-hidden">
+          <div className="inline-flex items-center justify-center px-4 md:px-6 py-3 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs md:text-sm font-bold tracking-wider max-w-3xl mx-auto h-16 md:h-20 overflow-hidden">
             <div 
-              className="transition-all duration-500 ease-in-out"
+              className="transition-opacity duration-700 ease-in-out text-center"
               style={{
                 opacity: 1,
-                animation: `fadeInOut 3s ease-in-out infinite`
+                animation: `fadeInOut 7s ease-in-out infinite`,
+                whiteSpace: 'normal',
+                lineHeight: '1.4'
               }}
             >
               {verses[currentVerseIndex]}
@@ -174,8 +176,8 @@ export default function Home() {
             <style>{`
               @keyframes fadeInOut {
                 0% { opacity: 0; }
-                10% { opacity: 1; }
-                90% { opacity: 1; }
+                8% { opacity: 1; }
+                92% { opacity: 1; }
                 100% { opacity: 0; }
               }
             `}</style>
