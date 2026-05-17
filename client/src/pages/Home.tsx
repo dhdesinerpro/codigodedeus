@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Star, ChevronRight, Zap, Heart, Brain, Shield } from 'lucide-react';
+import { Star, ChevronRight, Heart, Brain, Zap, Shield, Lock } from 'lucide-react';
 
 /**
  * DESIGN PHILOSOPHY: Premium Luxury Christian Prosperity
  * - Copy agressiva cristã focada em prosperidade, saúde, sabedoria, auto controle
- * - Título: "MUDE SUA VIDA EM 7 DIAS"
+ * - Versículo: "Transformai-vos pela renovação da vossa mente." Romanos 12:2
  * - Ênfase em ÁUDIO PODEROSO que desbloqueia crenças limitantes
- * - Muitos destaques em amarelo premium
- * - Cores de luxo e prosperidade
- * - Mobile Android first (botões grandes, espaçamento touch-friendly)
+ * - Destaques em amarelo premium
+ * - Cores de luxo e prosperidade (preto + amarelo)
+ * - Mobile Android first
  * - Rodapé fixo amarelo premium
- * - Copy sempre agressiva e promessas fortes
+ * - Espaçamento compacto, sem vazios em excesso
  */
 
 interface Testimonial {
@@ -123,7 +123,7 @@ export default function Home() {
     <div className="w-full bg-black text-white overflow-hidden">
       {/* ===== HERO SECTION ===== */}
       <section 
-        className="relative min-h-screen flex flex-col justify-center items-center px-4 py-16 md:py-20"
+        className="relative min-h-screen flex flex-col justify-center items-center px-4 py-8 md:py-12"
         style={{
           backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663669712065/P5kJDka2K9cT2nfK2HzBWG/hero-bg-modern-9kA24rzc9LuRirLUbYrPbU.webp')`,
           backgroundSize: 'cover',
@@ -135,11 +135,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85 z-0" />
         
         {/* Content */}
-        <div className="relative z-10 max-w-2xl mx-auto text-center space-y-6 md:space-y-8">
-          {/* Badge Premium */}
-          <div className="inline-flex items-center gap-2 px-3 md:px-4 py-2 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs md:text-sm font-bold tracking-wider">
-            <Zap className="w-4 h-4" />
-            ÁUDIO PODEROSO CRISTÃO
+        <div className="relative z-10 max-w-2xl mx-auto text-center space-y-4 md:space-y-6">
+          {/* Versículo Bíblico */}
+          <div className="inline-flex items-center justify-center px-3 md:px-4 py-2 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs md:text-sm font-bold tracking-wider max-w-lg mx-auto">
+            "Transformai-vos pela renovação da vossa mente." Romanos 12:2
           </div>
 
           {/* Título Principal - MUDE SUA VIDA EM 7 DIAS */}
@@ -154,41 +153,8 @@ export default function Home() {
             <span className="text-yellow-300 font-bold">Áudio Poderoso</span> que ativa sua consciência, desbloqueia <span className="text-yellow-300 font-bold">crenças limitantes</span> e liberta você de <span className="text-yellow-300 font-bold">padrões inconscientes</span>.
           </p>
 
-          {/* Promessas Agressivas */}
-          <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-xl p-5 md:p-7 backdrop-blur-sm space-y-3">
-            <p className="text-white font-bold text-base md:text-lg">
-              ✨ <span className="text-yellow-300">PROSPERIDADE</span> desbloqueada
-            </p>
-            <p className="text-white font-bold text-base md:text-lg">
-              ❤️ <span className="text-yellow-300">SAÚDE</span> restaurada
-            </p>
-            <p className="text-white font-bold text-base md:text-lg">
-              🧠 <span className="text-yellow-300">SABEDORIA</span> ativada
-            </p>
-            <p className="text-white font-bold text-base md:text-lg">
-              🛡️ <span className="text-yellow-300">AUTO CONTROLE</span> total
-            </p>
-          </div>
-
-          {/* CTA Principal - Texto Agressivo */}
-          <div className="flex flex-col gap-3 justify-center pt-2">
-            <button
-              onClick={handleCTA}
-              className="group w-full px-6 md:px-8 py-4 md:py-5 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
-            >
-              DESBLOQUEAR MINHA TRANSFORMAÇÃO AGORA
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button
-              onClick={handleCTA}
-              className="w-full px-6 md:px-8 py-4 border-2 border-yellow-400 text-yellow-300 font-bold text-base md:text-lg rounded-lg hover:bg-yellow-400/10 transition-all duration-300"
-            >
-              SABER MAIS
-            </button>
-          </div>
-
-          {/* Social Proof Rápida */}
-          <div className="flex flex-col gap-4 pt-4 text-sm md:text-base">
+          {/* Social Proof Rápida - Vidas Transformadas */}
+          <div className="flex flex-col gap-3 items-center pt-2">
             <div className="flex items-center justify-center gap-3">
               <div className="flex -space-x-2">
                 {testimonials.slice(0, 3).map((t) => (
@@ -197,12 +163,48 @@ export default function Home() {
               </div>
               <span><span className="text-yellow-300 font-bold">2.847+</span> vidas transformadas</span>
             </div>
-            <div className="flex items-center justify-center gap-2">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-              ))}
-              <span><span className="text-yellow-300 font-bold">4.9/5</span> avaliações verificadas</span>
+          </div>
+
+          {/* Promessas Agressivas - Bloco Profissional */}
+          <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-xl p-5 md:p-7 backdrop-blur-sm space-y-3 mt-4">
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
+              <div className="flex items-center gap-2">
+                <Zap className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 flex-shrink-0" />
+                <span className="text-white font-bold text-sm md:text-base"><span className="text-yellow-300">Prosperidade</span> desbloqueada</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Heart className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 flex-shrink-0" />
+                <span className="text-white font-bold text-sm md:text-base"><span className="text-yellow-300">Saúde</span> restaurada</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Brain className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 flex-shrink-0" />
+                <span className="text-white font-bold text-sm md:text-base"><span className="text-yellow-300">Sabedoria</span> ativada</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 flex-shrink-0" />
+                <span className="text-white font-bold text-sm md:text-base"><span className="text-yellow-300">Auto Controle</span> total</span>
+              </div>
             </div>
+          </div>
+
+          {/* CTA Principal - Texto Centralizado */}
+          <div className="flex flex-col gap-3 justify-center pt-2">
+            <button
+              onClick={handleCTA}
+              className="group w-full px-6 md:px-8 py-4 md:py-5 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
+            >
+              <Lock className="w-5 h-5" />
+              DESBLOQUEAR AGORA
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+
+          {/* Rating - Onde era "Saber Mais" */}
+          <div className="flex items-center justify-center gap-2 text-sm md:text-base">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+            ))}
+            <span><span className="text-yellow-300 font-bold">4.9/5</span> avaliações verificadas</span>
           </div>
         </div>
 
@@ -215,10 +217,10 @@ export default function Home() {
       </section>
 
       {/* ===== PROVA SOCIAL - DEPOIMENTOS ===== */}
-      <section className="py-16 md:py-20 px-4 bg-black relative z-20">
+      <section className="py-12 md:py-16 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-12 md:mb-16 space-y-3 md:space-y-4">
+          <div className="text-center mb-8 md:mb-12 space-y-2 md:space-y-3">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
               Quem Já
               <br />
@@ -240,28 +242,28 @@ export default function Home() {
               >
                 {testimonials.map((testimonial) => (
                   <div key={testimonial.id} className="w-full flex-shrink-0 px-2 md:px-4">
-                    <div className="bg-gradient-to-br from-yellow-400/5 to-yellow-400/0 border border-yellow-400/25 rounded-2xl p-6 md:p-10 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300">
+                    <div className="bg-gradient-to-br from-yellow-400/5 to-yellow-400/0 border border-yellow-400/25 rounded-2xl p-6 md:p-8 backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300">
                       {/* Stars */}
-                      <div className="flex gap-1 mb-5 md:mb-6">
+                      <div className="flex gap-1 mb-4 md:mb-5">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
 
                       {/* Feedback */}
-                      <p className="text-white text-lg md:text-xl font-light mb-6 md:mb-8 leading-relaxed">
+                      <p className="text-white text-lg md:text-xl font-light mb-5 md:mb-6 leading-relaxed">
                         "{testimonial.feedback}"
                       </p>
 
                       {/* Author */}
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-3">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-yellow-400"
+                          className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400"
                         />
                         <div className="text-left">
-                          <h3 className="text-white font-bold text-base md:text-lg">{testimonial.name}</h3>
+                          <h3 className="text-white font-bold text-base">{testimonial.name}</h3>
                           <p className="text-yellow-300 text-sm">{testimonial.profession}</p>
                         </div>
                       </div>
@@ -271,51 +273,49 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Indicators */}
-            <div className="flex justify-center gap-2 mt-6 md:mt-8">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonialIndex(index)}
-                  className={`transition-all duration-300 rounded-full ${
-                    index === currentTestimonialIndex 
-                      ? 'bg-yellow-400 w-8 h-2' 
-                      : 'bg-white/20 w-2 h-2 hover:bg-white/40'
-                  }`}
-                />
-              ))}
-            </div>
+            {/* Indicators - REMOVIDO */}
           </div>
         </div>
       </section>
 
-      {/* ===== O QUE VOCÊ RECEBE ===== */}
-      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
+      {/* ===== O QUE VOCÊ VAI RECEBER ===== */}
+      <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
         <div className="max-w-4xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-12 md:mb-16 space-y-3 md:space-y-4">
+          <div className="text-center mb-8 md:mb-12 space-y-3 md:space-y-4">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
-              O Que Você
+              O Que Você vai
               <br />
-              <span className="text-yellow-400">REALMENTE RECEBE</span>
+              <span className="text-yellow-400">RECEBER</span>
             </h2>
-            <p className="text-white/70 text-base md:text-lg">
-              Não é só um áudio. É <span className="text-yellow-300 font-bold">libertação espiritual</span> completa.
+            <p className="text-white/80 text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
+              Isso não é apenas um áudio.
+              <br />
+              <br />
+              É uma <span className="text-yellow-300 font-bold">ativação espiritual poderosa</span> criada para quebrar padrões negativos, fortalecer sua mente e despertar uma nova forma de pensar, sentir e agir.
+              <br />
+              <br />
+              Baseado em <span className="text-yellow-300 font-bold">princípios bíblicos</span> sobre renovação da mente, fé e transformação interior.
+              <br />
+              <br />
+              Enquanto a maioria continua presa aos mesmos pensamentos…
+              <br />
+              <span className="text-yellow-300 font-bold">você começa a reprogramar sua mente</span> com palavras de poder, fé e direção.
             </p>
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={index}
-                  className="p-5 md:p-7 rounded-2xl border border-yellow-400/25 bg-black/50 backdrop-blur-sm hover:border-yellow-400/50 hover:bg-yellow-400/5 transition-all duration-300 group"
+                  className="p-5 md:p-6 rounded-2xl border border-yellow-400/25 bg-black/50 backdrop-blur-sm hover:border-yellow-400/50 hover:bg-yellow-400/5 transition-all duration-300 group"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-yellow-400/20 flex items-center justify-center flex-shrink-0 group-hover:bg-yellow-400/30 transition-colors">
-                      <Icon className="w-6 h-6 md:w-7 md:h-7 text-yellow-400" />
+                  <div className="flex items-start gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-yellow-400/20 flex items-center justify-center flex-shrink-0 group-hover:bg-yellow-400/30 transition-colors">
+                      <Icon className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
                       <h3 className="text-white font-bold text-base md:text-lg mb-1">{feature.title}</h3>
@@ -330,9 +330,9 @@ export default function Home() {
       </section>
 
       {/* ===== POR QUE AGORA ===== */}
-      <section className="py-16 md:py-20 px-4 bg-black relative z-20">
+      <section className="py-12 md:py-16 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 md:mb-16 space-y-3 md:space-y-4">
+          <div className="text-center mb-8 md:mb-12 space-y-2 md:space-y-3">
             <h2 className="text-4xl md:text-6xl font-black leading-tight">
               Por Que <span className="text-yellow-400">AGORA</span>?
             </h2>
@@ -342,7 +342,7 @@ export default function Home() {
           </div>
 
           {/* Reasons */}
-          <div className="space-y-4 md:space-y-5">
+          <div className="space-y-3 md:space-y-4">
             {[
               {
                 title: 'Seu Tempo É Limitado',
@@ -361,9 +361,9 @@ export default function Home() {
                 desc: 'Junte-se a 2.847+ pessoas que já despertaram. Você não está sozinho nessa jornada espiritual.'
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-4 md:p-6 rounded-xl border border-yellow-400/25 bg-yellow-400/5 hover:border-yellow-400/50 transition-all duration-300">
-                <h3 className="text-white font-bold text-base md:text-lg mb-2 flex items-center gap-2">
-                  <span className="text-yellow-400 font-black text-lg md:text-xl">{idx + 1}.</span>
+              <div key={idx} className="p-4 md:p-5 rounded-xl border border-yellow-400/25 bg-yellow-400/5 hover:border-yellow-400/50 transition-all duration-300">
+                <h3 className="text-white font-bold text-base md:text-lg mb-1 flex items-center gap-2">
+                  <span className="text-yellow-400 font-black text-lg">{idx + 1}.</span>
                   {item.title}
                 </h3>
                 <p className="text-white/70 text-sm md:text-base">{item.desc}</p>
@@ -374,9 +374,9 @@ export default function Home() {
       </section>
 
       {/* ===== URGÊNCIA & SCARCITY ===== */}
-      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black to-yellow-400/10 relative z-20">
+      <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-yellow-400/10 relative z-20">
         <div className="max-w-4xl mx-auto">
-          <div className="p-6 md:p-10 rounded-2xl border-2 border-yellow-400 bg-yellow-400/10 backdrop-blur-sm text-center space-y-4 md:space-y-6">
+          <div className="p-6 md:p-8 rounded-2xl border-2 border-yellow-400 bg-yellow-400/10 backdrop-blur-sm text-center space-y-3 md:space-y-5">
             <h2 className="text-3xl md:text-5xl font-black">
               <span className="text-yellow-300">⚠️ OFERTA LIMITADA</span>
             </h2>
@@ -389,11 +389,12 @@ export default function Home() {
             <p className="text-white/70 text-sm md:text-base">
               Depois disso, o preço sobe para <span className="text-yellow-300 font-bold line-through">R$ 97</span>
             </p>
-            <div className="flex flex-col gap-3 justify-center pt-4">
+            <div className="flex flex-col gap-3 justify-center pt-2">
               <button
                 onClick={handleCTA}
                 className="group w-full px-6 md:px-8 py-4 md:py-5 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
               >
+                <Lock className="w-5 h-5" />
                 GARANTIR MEU ACESSO AGORA
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -403,9 +404,9 @@ export default function Home() {
       </section>
 
       {/* ===== FAQ RÁPIDO ===== */}
-      <section className="py-16 md:py-20 px-4 bg-black relative z-20">
+      <section className="py-12 md:py-16 px-4 bg-black relative z-20">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-black text-center mb-12 md:mb-16 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black text-center mb-8 md:mb-12 leading-tight">
             Dúvidas <span className="text-yellow-400">Frequentes</span>
           </h2>
 
@@ -428,7 +429,7 @@ export default function Home() {
                 a: '7 dias de garantia incondicional. Se não sentir transformação, devolvemos tudo sem perguntas.'
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-4 md:p-6 rounded-xl border border-yellow-400/25 bg-yellow-400/5 hover:border-yellow-400/50 transition-all duration-300">
+              <div key={idx} className="p-4 md:p-5 rounded-xl border border-yellow-400/25 bg-yellow-400/5 hover:border-yellow-400/50 transition-all duration-300">
                 <h3 className="text-white font-bold text-base md:text-lg mb-2">{item.q}</h3>
                 <p className="text-white/70 text-sm md:text-base">{item.a}</p>
               </div>
@@ -438,8 +439,8 @@ export default function Home() {
       </section>
 
       {/* ===== CTA FINAL ===== */}
-      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
-        <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+      <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-yellow-400/5 relative z-20">
+        <div className="max-w-4xl mx-auto text-center space-y-5 md:space-y-6">
           <h2 className="text-4xl md:text-6xl font-black leading-tight">
             Sua Transformação
             <br />
@@ -454,6 +455,7 @@ export default function Home() {
             onClick={handleCTA}
             className="group w-full md:w-auto px-8 md:px-10 py-5 md:py-6 bg-yellow-400 text-black font-black text-base md:text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/50 transform hover:scale-105 active:scale-95"
           >
+            <Lock className="w-5 h-5" />
             DESBLOQUEAR AGORA POR R$ 27
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
@@ -482,8 +484,9 @@ export default function Home() {
 
           <button
             onClick={handleCTA}
-            className="px-5 md:px-7 py-2 md:py-3 bg-black text-yellow-400 font-black rounded-lg hover:bg-black/80 transition-all duration-300 whitespace-nowrap text-xs md:text-sm active:scale-95"
+            className="px-5 md:px-7 py-2 md:py-3 bg-black text-yellow-400 font-black rounded-lg hover:bg-black/80 transition-all duration-300 whitespace-nowrap text-xs md:text-sm active:scale-95 flex items-center gap-1"
           >
+            <Lock className="w-3 h-3 md:w-4 md:h-4" />
             DESBLOQUEAR AGORA
           </button>
         </div>
