@@ -136,9 +136,7 @@ export default function Home() {
   }, []);
 
   const handleCTA = () => {
-    const message = 'Quero desbloquear o Código de Deus e MUDAR MINHA VIDA AGORA!';
-    const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
-    window.open(whatsappLink, '_blank');
+    window.open('https://pay.kiwify.com.br/EO5Sc34', '_blank');
   };
 
   return (
